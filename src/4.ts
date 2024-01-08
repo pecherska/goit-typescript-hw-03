@@ -37,12 +37,15 @@ abstract class House {
 }
 
 class MyHouse extends House {
+  constructor(key: Key) {
+    super(key);
+  }
   openDoor(key: Key): void {
     if (key.getSignature() === this.key.getSignature()) {
       this.door = true;
       console.log("The door is opened.");
     } else {
-      console.log("Invalid key. The door remains closed.");
+      console.log("The door is closed.");
     }
   }
 }
